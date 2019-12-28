@@ -10,10 +10,7 @@ const connectCMS = async () => {
 
 const fetchTypes = async (type) => {
   const api = await connectCMS()
-  const response = await api.query(
-    Prismic.Predicates.at('document.type', type),
-    {}
-  )
+  const response = await api.query(Prismic.Predicates.at('document.type', type), {})
   if (response) {
     return mapResults(response.results)
   } else {
@@ -21,4 +18,4 @@ const fetchTypes = async (type) => {
   }
 }
 
-export const fetchNavigationHeader = async () => fetchTypes('navigation_header')
+export const fetchNavigationHeader = async () => fetchTypes('navigation')

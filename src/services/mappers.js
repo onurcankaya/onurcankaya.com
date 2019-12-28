@@ -1,16 +1,18 @@
-import RichText from 'prismic-react.js'
+import { RichText } from 'prismic-reactjs'
 
-export const mapResults = results => {
+export const mapResults = (results) => {
   switch (results[0].type) {
-    case 'navigation_header':
+    case 'navigation':
       return mapNavigationHeader(results[0].data)
     default:
       return results[0].data
   }
 }
 
-const mapNavigationHeader = content => ({
-  navigationLabels: content && content.navigation_items.map(() => ({
-    label: item ? RichText(item.label) : ''
-  }))
+const mapNavigationHeader = (content) => ({
+  navigationLabels:
+    content &&
+    content.navigation_items.map((item) => ({
+      label: item ? RichText.asText(item.label) : '',
+    })),
 })
