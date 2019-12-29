@@ -1,6 +1,7 @@
 import React from 'react'
 import NavigationHeader from '../../components/navigation-header'
-import { fetchNavigationHeader } from '../../services/api'
+import PageIntro from './page-intro'
+import { fetchNavigationHeader, fetchHomePage } from '../../services/api'
 
 class Home extends React.PureComponent {
   constructor(props) {
@@ -8,20 +9,25 @@ class Home extends React.PureComponent {
 
     this.state = {
       navigationLabels: null,
+      homePage: null,
     }
   }
 
   async componentDidMount() {
     const navigationLabels = await fetchNavigationHeader()
-    this.setState({ navigationLabels })
+    const homePage = await fetchHomePage()
+    this.setState({ navigationLabels, homePage })
   }
 
   render() {
-    const { navigationLabels } = this.state
+    const { navigationLabels, homePage } = this.state
+
+    if (!homePage) return null
 
     return (
       <div>
-        <NavigationHeader data={navigationLabels} />
+        <NavigationHeader content={navigationLabels} />
+        <PageIntro pageIntro={homePage.pageIntro} />
       </div>
     )
   }
