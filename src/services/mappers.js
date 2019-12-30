@@ -15,6 +15,7 @@ const mapNavigationHeader = (content) => ({
   navigationLabels:
     content &&
     content.navigation_items.map((item) => ({
+      route: item ? RichText.asText(item.route) : '',
       label: item ? RichText.asText(item.label) : '',
     })),
 })
