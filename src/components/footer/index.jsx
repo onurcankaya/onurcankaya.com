@@ -4,8 +4,9 @@ import './index.css'
 const Footer = ({ content }) => (
   <div className="footer-container">
     <div className="container footer-content">
-      <div className="copyright-text">{`© ${new Date().getFullYear()} ${content &&
-        content.copyrightText}`}</div>
+      <div className="copyright-text">{`© ${new Date().getFullYear()} ${
+        content ? content.copyrightText : ''
+      }`}</div>
       <div className="social">
         {content &&
           content.social.map((item, index) => (
