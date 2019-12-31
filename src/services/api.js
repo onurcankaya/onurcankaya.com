@@ -20,3 +20,4 @@ const fetchTypes = async (type) => {
 
 export const fetchNavigationLabels = async () => fetchTypes('navigation')
 export const fetchHomePage = async () => fetchTypes('home_page')
+export const fetchFooter = async () => fetchTypes('footer')

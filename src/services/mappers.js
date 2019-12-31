@@ -6,6 +6,8 @@ export const mapResults = (results) => {
       return mapNavigationHeader(results[0].data)
     case 'home_page':
       return mapHomePage(results[0].data)
+    case 'footer':
+      return mapFooter(results[0].data)
     default:
       return results[0].data
   }
@@ -22,4 +24,14 @@ const mapNavigationHeader = (content) => ({
 
 const mapHomePage = (content) => ({
   pageIntro: content ? RichText.asText(content.page_intro) : '',
+})
+
+const mapFooter = (content) => ({
+  copyrightText: content ? RichText.asText(content.copyright_text) : '',
+  social:
+    content &&
+    content.social.map((item) => ({
+      logo: item ? item.logo.url : '',
+      link: item ? RichText.asText(item.link) : '',
+    })),
 })
