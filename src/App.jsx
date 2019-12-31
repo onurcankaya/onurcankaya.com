@@ -1,7 +1,8 @@
 import React from 'react'
 import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom'
-import { fetchNavigationLabels } from './services/api'
+import { fetchNavigationLabels, fetchFooter } from './services/api'
 import NavigationHeader from './components/navigation-header'
+import Footer from './components/footer'
 import Home from './pages/home'
 import About from './pages/about'
 
@@ -10,16 +11,18 @@ class App extends React.PureComponent {
     super(props)
     this.state = {
       navigationLabels: null,
+      footer: null,
     }
   }
 
   async componentDidMount() {
     const navigationLabels = await fetchNavigationLabels()
-    this.setState({ navigationLabels })
+    const footer = await fetchFooter()
+    this.setState({ navigationLabels, footer })
   }
 
   render() {
-    const { navigationLabels } = this.state
+    const { navigationLabels, footer } = this.state
 
     return (
       <div className="container">
@@ -30,6 +33,7 @@ class App extends React.PureComponent {
             <Route path="/" exact component={Home} />
             <Redirect to="/" />
           </Switch>
+          <Footer content={footer} />
         </BrowserRouter>
       </div>
     )

@@ -16,3 +16,7 @@ a:hover {
   text-decoration: none;
   color: rgb(255, 167, 196);
 }
+
+p {
+  margin: 0;
+}

@@ -1,0 +1,27 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #ddd;
+  background-color: rgb(20, 20, 20);
+}
+
+.footer-content {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright-text {
+  font-size: 14px;
+}
+
+.icon {
+  padding: 0 10px;
+}
+.icon:last-child {
+  padding-right: 0;
+}
