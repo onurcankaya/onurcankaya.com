@@ -21,7 +21,7 @@ class Home extends React.PureComponent {
     if (!homePage) return null
 
     return (
-      <div>
+      <div className="container home-page-container">
         <PageIntro pageIntro={homePage.pageIntro} />
       </div>
     )

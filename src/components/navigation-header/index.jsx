@@ -4,17 +4,19 @@ import './index.css'
 
 const NavigationHeader = ({ content }) => (
   <header className="navigation-container">
-    <Link to="/" className="logo">{`Onur.`}</Link>
-    <div className="navigation-labels">
-      {content &&
-        content.navigationLabels.map((item, index) => {
-          return (
-            <Link key={index} to={item.route} className="navigation-label">
-              {item.label}
-            </Link>
-          )
-        })}
-      <a href="mailto:onur.eren.cankaya@gmail.com" className="contact-link">{`Contact`}</a>
+    <div className="container navigation-content">
+      <Link to="/" className="logo">{`Onur.`}</Link>
+      <div className="navigation-labels">
+        {content &&
+          content.navigationLabels.map((item, index) => {
+            return (
+              <Link key={index} to={item.route} className="navigation-label">
+                {item.label}
+              </Link>
+            )
+          })}
+        <a href="mailto:onur.eren.cankaya@gmail.com" className="contact-link">{`Contact`}</a>
+      </div>
     </div>
   </header>
 )

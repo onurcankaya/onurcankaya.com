@@ -1,13 +1,13 @@
 .footer-container {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  color: #ddd;
+  margin-top: 100px;
   background-color: rgb(20, 20, 20);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-content {
+  color: #ddd;
   height: 80px;
   display: flex;
   flex-direction: row;

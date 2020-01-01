@@ -25,7 +25,7 @@ class App extends React.PureComponent {
     const { navigationLabels, footer } = this.state
 
     return (
-      <div className="container">
+      <div>
         <BrowserRouter>
           <NavigationHeader content={navigationLabels} />
           <Switch>

@@ -4,7 +4,7 @@ import './index.css'
 class About extends React.PureComponent {
   render() {
     return (
-      <div>
+      <div className="container">
         <div>About</div>
       </div>
     )
