@@ -3,6 +3,7 @@ import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom'
 import { fetchNavigationLabels, fetchFooter } from './services/api'
 import NavigationHeader from './components/navigation-header'
 import Footer from './components/footer'
+import Loader from './components/loader'
 import Home from './pages/home'
 import About from './pages/about'
 
@@ -10,6 +11,7 @@ class App extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
+      isLoading: true,
       navigationLabels: null,
       footer: null,
     }
@@ -18,11 +20,15 @@ class App extends React.PureComponent {
   async componentDidMount() {
     const navigationLabels = await fetchNavigationLabels()
     const footer = await fetchFooter()
-    this.setState({ navigationLabels, footer })
+    this.setState({ isLoading: false, navigationLabels, footer })
   }
 
   render() {
-    const { navigationLabels, footer } = this.state
+    const { isLoading, navigationLabels, footer } = this.state
+
+    if (isLoading) {
+      return <Loader />
+    }
 
     return (
       <div>
