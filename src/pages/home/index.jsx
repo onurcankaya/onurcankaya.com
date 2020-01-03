@@ -1,31 +1,10 @@
 import React from 'react'
 import PageIntro from './page-intro'
-import { fetchHomePage } from '../../services/api'
 
-class Home extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      homePage: null,
-    }
-  }
-
-  async componentDidMount() {
-    const homePage = await fetchHomePage()
-    this.setState({ homePage })
-  }
-
-  render() {
-    const { homePage } = this.state
-
-    if (!homePage) return null
-
-    return (
-      <div className="container home-page-container">
-        <PageIntro pageIntro={homePage.pageIntro} />
-      </div>
-    )
-  }
-}
+const Home = ({ content }) => (
+  <div className="container home-page-container">
+    <PageIntro pageIntro={content && content.pageIntro} />
+  </div>
+)
 
 export default Home
