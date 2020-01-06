@@ -6,6 +6,8 @@ export const mapResults = (results) => {
       return mapNavigationHeader(results[0].data)
     case 'home_page':
       return mapHomePage(results[0].data)
+    case 'about_page':
+      return mapAboutPage(results[0].data)
     case 'footer':
       return mapFooter(results[0].data)
     default:
@@ -24,6 +26,12 @@ const mapNavigationHeader = (content) => ({
 
 const mapHomePage = (content) => ({
   pageIntro: content ? RichText.asText(content.page_intro) : '',
+})
+
+const mapAboutPage = (content) => ({
+  profilePicture: content ? content.profile_picture.url : '',
+  alt: content ? content.profile_picture.alt : '',
+  aboutText: content ? RichText.asText(content.about_text) : '',
 })
 
 const mapFooter = (content) => ({
