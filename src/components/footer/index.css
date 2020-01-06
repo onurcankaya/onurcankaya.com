@@ -1,8 +1,6 @@
 .footer-container {
   margin-top: 100px;
   background-color: rgb(20, 20, 20);
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
