@@ -1,14 +1,13 @@
 import React from 'react'
 import './index.css'
 
-class About extends React.PureComponent {
-  render() {
-    return (
-      <div className="container">
-        <div>About</div>
-      </div>
-    )
-  }
-}
+const About = ({ content }) => (
+  <div className="container">
+    <div className="content">
+      <img src={content.profilePicture} alt={content.alt} className="profile-picture" />
+      <div>{content.aboutText}</div>
+    </div>
+  </div>
+)
 
 export default About
