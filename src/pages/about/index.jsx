@@ -5,7 +5,7 @@ const About = ({ content }) => (
   <div className="container">
     <div className="content">
       <img src={content.profilePicture} alt={content.alt} className="profile-picture" />
-      <div>{content.aboutText}</div>
+      <div className="about-me-text">{content.aboutText}</div>
     </div>
   </div>
 )
