@@ -10,6 +10,8 @@ export const mapResults = (results) => {
       return mapAboutPage(results[0].data)
     case 'experience_section':
       return mapExperienceSection(results[0].data)
+    case 'skills_section':
+      return mapSkillsSection(results[0].data)
     case 'footer':
       return mapFooter(results[0].data)
     default:
@@ -46,6 +48,15 @@ const mapExperienceSection = (content) => ({
       time: item ? RichText.asText(item.time) : '',
       location: item ? RichText.asText(item.location) : '',
       description: item ? RichText.asText(item.description) : '',
+    })),
+})
+
+const mapSkillsSection = (content) => ({
+  title: content ? RichText.asText(content.title) : '',
+  skills:
+    content &&
+    content.skills.map((skill) => ({
+      description: skill ? RichText.asText(skill.description) : '',
     })),
 })
 
