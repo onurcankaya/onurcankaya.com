@@ -8,6 +8,8 @@ export const mapResults = (results) => {
       return mapHomePage(results[0].data)
     case 'about_page':
       return mapAboutPage(results[0].data)
+    case 'experience_section':
+      return mapExperienceSection(results[0].data)
     case 'footer':
       return mapFooter(results[0].data)
     default:
@@ -32,6 +34,19 @@ const mapAboutPage = (content) => ({
   profilePicture: content ? content.profile_picture.url : '',
   alt: content ? content.profile_picture.alt : '',
   aboutText: content ? RichText.asText(content.about_text) : '',
+})
+
+const mapExperienceSection = (content) => ({
+  title: content ? RichText.asText(content.title) : '',
+  experience:
+    content &&
+    content.experience.map((item) => ({
+      companyName: item ? RichText.asText(item.company_name) : '',
+      role: item ? RichText.asText(item.role) : '',
+      time: item ? RichText.asText(item.time) : '',
+      location: item ? RichText.asText(item.location) : '',
+      description: item ? RichText.asText(item.description) : '',
+    })),
 })
 
 const mapFooter = (content) => ({
