@@ -47,7 +47,7 @@ const mapExperienceSection = (content) => ({
       role: item ? RichText.asText(item.role) : '',
       time: item ? RichText.asText(item.time) : '',
       location: item ? RichText.asText(item.location) : '',
-      description: item ? RichText.asText(item.description) : '',
+      description: item ? RichText.render(item.description) : '',
     })),
 })
 

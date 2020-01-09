@@ -1,6 +1,13 @@
 import React from 'react'
 import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom'
-import { fetchNavigationLabels, fetchHomePage, fetchAboutPage, fetchFooter } from './services/api'
+import {
+  fetchNavigationLabels,
+  fetchHomePage,
+  fetchAboutPage,
+  fetchExperienceSection,
+  fetchSkillsSection,
+  fetchFooter,
+} from './services/api'
 import NavigationHeader from './components/navigation-header'
 import Footer from './components/footer'
 import Loader from './components/loader'
@@ -16,6 +23,8 @@ class App extends React.PureComponent {
       navigationLabels: null,
       homePage: null,
       aboutPage: null,
+      experience: null,
+      skills: null,
       footer: null,
     }
   }
@@ -24,18 +33,37 @@ class App extends React.PureComponent {
     const navigationLabels = await fetchNavigationLabels()
     const homePage = await fetchHomePage()
     const aboutPage = await fetchAboutPage()
+    const experience = await fetchExperienceSection()
+    const skills = await fetchSkillsSection()
     const footer = await fetchFooter()
-    this.setState({ isLoading: false, navigationLabels, homePage, aboutPage, footer })
+    this.setState({
+      isLoading: false,
+      navigationLabels,
+      homePage,
+      aboutPage,
+      experience,
+      skills,
+      footer,
+    })
   }
 
   render() {
-    const { isLoading, navigationLabels, homePage, aboutPage, footer } = this.state
+    const {
+      isLoading,
+      navigationLabels,
+      homePage,
+      aboutPage,
+      experience,
+      skills,
+      footer,
+    } = this.state
 
     if (isLoading) {
       return <Loader />
     }
 
-    console.log(aboutPage)
+    console.log(skills)
+    console.log(experience)
 
     return (
       <div>
@@ -43,7 +71,12 @@ class App extends React.PureComponent {
           <div className="content-container">
             <NavigationHeader content={navigationLabels} />
             <Switch>
-              <Route path="/about" render={(props) => <About {...props} content={aboutPage} />} />
+              <Route
+                path="/about"
+                render={(props) => (
+                  <About {...props} content={aboutPage} experience={experience} skills={skills} />
+                )}
+              />
               <Route path="/" exact render={(props) => <Home {...props} content={homePage} />} />
               <Redirect to="/" />
             </Switch>

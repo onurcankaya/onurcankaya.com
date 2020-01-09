@@ -1,20 +1,60 @@
 .content {
-  padding-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 120px;
+  margin: 0 auto;
 }
 
 .profile-picture {
   width: 300px;
   height: 300px;
   border-radius: 150px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .about-me-text {
-  max-width: 500px;
+  max-width: 600px;
   font-size: 18px;
   line-height: 30px;
+  margin-bottom: 80px;
+}
+
+.experience-section-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.experience {
+  margin-bottom: 80px;
+}
+
+.company-name {
+  margin-bottom: 2px;
+}
+
+.role {
+  margin-bottom: 2px;
+  color: #333;
+  font-weight: bold;
+}
+
+.time {
+  color: #333;
+}
+
+.location {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.description p {
+  margin-bottom: 15px;
 }
