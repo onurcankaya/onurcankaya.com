@@ -62,9 +62,6 @@ class App extends React.PureComponent {
       return <Loader />
     }
 
-    console.log(skills)
-    console.log(experience)
-
     return (
       <div>
         <BrowserRouter>

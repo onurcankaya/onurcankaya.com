@@ -21,12 +21,12 @@
   margin-bottom: 80px;
 }
 
-.experience-section-container {
+.section-container {
   width: 100%;
   max-width: 600px;
 }
 
-.experience-title {
+.title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -57,4 +57,8 @@
 
 .description p {
   margin-bottom: 15px;
+}
+
+.skill {
+  margin-bottom: 20px;
 }

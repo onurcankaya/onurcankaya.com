@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Experience = ({ experience }) => (
-  <div className="experience-section-container">
-    <div className="experience-title">{experience.title}</div>
+  <div className="section-container">
+    <div className="title">{experience.title}</div>
     {experience &&
       experience.experience.reverse().map((item, index) => (
         <div className="experience" key={index}>

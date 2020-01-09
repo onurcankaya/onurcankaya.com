@@ -56,7 +56,7 @@ const mapSkillsSection = (content) => ({
   skills:
     content &&
     content.skills.map((skill) => ({
-      description: skill ? RichText.asText(skill.description) : '',
+      description: skill ? RichText.render(skill.description) : '',
     })),
 })
 
