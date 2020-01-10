@@ -6,6 +6,8 @@ export const mapResults = (results) => {
       return mapNavigationHeader(results[0].data)
     case 'home_page':
       return mapHomePage(results[0].data)
+    case 'projects_section':
+      return mapProjectsSection(results[0].data)
     case 'about_page':
       return mapAboutPage(results[0].data)
     case 'experience_section':
@@ -30,6 +32,21 @@ const mapNavigationHeader = (content) => ({
 
 const mapHomePage = (content) => ({
   pageIntro: content ? RichText.asText(content.page_intro) : '',
+})
+
+const mapProjectsSection = (content) => ({
+  title: content ? RichText.asText(content.title) : '',
+  projects:
+    content &&
+    content.projects.map((project) => ({
+      thumbnailUrl: project ? project.thumbnail.url : '',
+      alt: project ? project.thumbnail.alt : '',
+      name: project ? RichText.asText(project.name) : '',
+      description: project ? RichText.asText(project.description) : '',
+      technologies: project ? RichText.asText(project.technologies) : '',
+      siteUrl: project ? RichText.asText(project.site_url) : '',
+      githubUrl: project ? RichText.asText(project.github_url) : '',
+    })),
 })
 
 const mapAboutPage = (content) => ({

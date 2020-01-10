@@ -21,6 +21,7 @@ const fetchTypes = async (type) => {
 
 export const fetchNavigationLabels = async () => fetchTypes('navigation')
 export const fetchHomePage = async () => fetchTypes('home_page')
+export const fetchProjectsSection = async () => fetchTypes('projects_section')
 export const fetchAboutPage = async () => fetchTypes('about_page')
 export const fetchExperienceSection = async () => fetchTypes('experience_section')
 export const fetchSkillsSection = async () => fetchTypes('skills_section')
