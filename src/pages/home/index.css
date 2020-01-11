@@ -35,7 +35,7 @@
 .projects-section-container {
   margin-bottom: 50px;
   padding: 0 20px;
-  max-width: 1040px;
+  max-width: 1110px;
 }
 
 @media (max-width: 1000px) {
@@ -47,7 +47,7 @@
 .projects-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   max-width: 1040px;
 }
 
@@ -60,10 +60,11 @@
   } 
 }
 
-.title {
+.projects-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+  padding-left: 40px;
 }
 
 .project {

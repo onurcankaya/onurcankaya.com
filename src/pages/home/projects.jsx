@@ -3,7 +3,7 @@ import './index.css'
 
 const Projects = ({ projects }) => (
   <div className="projects-section-container">
-    <div className="title">{projects.title}</div>
+    <div className="projects-title">{projects.title}</div>
     <div className="projects-container">
       {projects &&
         projects.projects.map((project, index) => (
