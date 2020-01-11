@@ -1,9 +1,10 @@
 .home-page-container {
-  padding: 100px 15px;
+  padding: 100px 15px 20px 15px;
 }
 
 .page-intro-wrapper {
-  padding: 80px 60px;
+  padding: 120px 60px;
+  margin-bottom: 120px;
 }
 
 .page-intro {
@@ -29,4 +30,179 @@
     font-size: 24px;
     line-height: 32px;
   }
+}
+
+.projects-section-container {
+  margin-bottom: 50px;
+  padding: 0 20px;
+  max-width: 1040px;
+}
+
+@media (max-width: 1000px) {
+  .projects-section-container {
+    padding: 0;
+  }
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1040px;
+}
+
+@media (max-width: 1000px) {
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  } 
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 25px;
+  background-color: #fff;
+  margin: 15px 2px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 4px 0px, rgba(0, 0, 0, 0.16) 0px 2px 7px 0px;
+}
+
+@media (max-width: 1000px) {
+  .project {
+    /* height: 600px; */
+  } 
+}
+
+.project-thumbnail {
+  margin-bottom: 10px;
+} 
+
+@media (max-width: 1000px) {
+  .project-thumbnail {
+    width: 100%;
+    height: auto;
+  } 
+}
+
+.thumbnail-img-container {
+  height: 300px;
+}
+
+@media (max-width: 1000px) {
+  .thumbnail-img-container {
+    height: 660px;
+  }
+}
+
+@media (max-width: 992px) {
+  .thumbnail-img-container {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail-img-container {
+    height: 480px;
+  }
+}
+
+@media (max-width: 760px) {
+  .thumbnail-img-container {
+    height: 380px;
+  }
+}
+
+@media (max-width: 468px) {
+  .thumbnail-img-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 465px) {
+  .thumbnail-img-container {
+    height: 280px;
+  }
+}
+
+@media (max-width: 375px) {
+  .thumbnail-img-container {
+    height: 240px;
+  }
+}
+
+@media (max-width: 345px) {
+  .thumbnail-img-container {
+    height: 220px;
+  }
+}
+
+@media (max-width: 320px) {
+  .thumbnail-img-container {
+    height: 180px;
+  }
+}
+
+.project-details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(245, 245, 245, 0.7);
+  border: 1px solid rgba(245, 245, 245, 1);
+  padding: 15px;
+  max-width: 400px;
+  height: 130px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .project-details {
+    max-width: 860px;
+  } 
+}
+
+@media (max-width: 992px) {
+  .project-details {
+    max-width: 640px;
+  } 
+}
+
+@media (max-width: 768px) {
+  .project-details {
+    max-width: 640px;
+  } 
+}
+
+@media (max-width: 374px) {
+  .project-details {
+    height: 220px;
+  } 
+}
+
+@media (max-width: 320px) {
+  .project-details {
+    height: 200px;
+  } 
+}
+
+.project-name {
+  font-weight: bold;
+  /* margin-bottom: 10px; */
+}
+
+.technologies-used {
+  font-weight: 600;
+}
+
+.github-icon {
+  padding: 0 5px;
 }

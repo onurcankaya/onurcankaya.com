@@ -3,6 +3,7 @@ import { Switch, BrowserRouter, Route, Redirect } from 'react-router-dom'
 import {
   fetchNavigationLabels,
   fetchHomePage,
+  fetchProjectsSection,
   fetchAboutPage,
   fetchExperienceSection,
   fetchSkillsSection,
@@ -22,6 +23,7 @@ class App extends React.PureComponent {
       isLoading: true,
       navigationLabels: null,
       homePage: null,
+      projects: null,
       aboutPage: null,
       experience: null,
       skills: null,
@@ -32,6 +34,7 @@ class App extends React.PureComponent {
   async componentDidMount() {
     const navigationLabels = await fetchNavigationLabels()
     const homePage = await fetchHomePage()
+    const projects = await fetchProjectsSection()
     const aboutPage = await fetchAboutPage()
     const experience = await fetchExperienceSection()
     const skills = await fetchSkillsSection()
@@ -40,6 +43,7 @@ class App extends React.PureComponent {
       isLoading: false,
       navigationLabels,
       homePage,
+      projects,
       aboutPage,
       experience,
       skills,
@@ -52,6 +56,7 @@ class App extends React.PureComponent {
       isLoading,
       navigationLabels,
       homePage,
+      projects,
       aboutPage,
       experience,
       skills,
@@ -61,6 +66,8 @@ class App extends React.PureComponent {
     if (isLoading) {
       return <Loader />
     }
+
+    console.log('projects', projects)
 
     return (
       <div>
@@ -74,7 +81,11 @@ class App extends React.PureComponent {
                   <About {...props} content={aboutPage} experience={experience} skills={skills} />
                 )}
               />
-              <Route path="/" exact render={(props) => <Home {...props} content={homePage} />} />
+              <Route
+                path="/"
+                exact
+                render={(props) => <Home {...props} content={homePage} projects={projects} />}
+              />
               <Redirect to="/" />
             </Switch>
             <Footer content={footer} />
