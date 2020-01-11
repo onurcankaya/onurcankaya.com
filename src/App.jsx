@@ -67,8 +67,6 @@ class App extends React.PureComponent {
       return <Loader />
     }
 
-    console.log('projects', projects)
-
     return (
       <div>
         <BrowserRouter>
