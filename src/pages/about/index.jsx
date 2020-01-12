@@ -1,8 +1,12 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import './index.css'
 import Experience from './experience'
 import Skills from './skills'
 import './nes.min.css'
+
+ReactGA.initialize('UA-149400511-2')
+ReactGA.pageview('/about')
 
 const About = ({ content, experience, skills }) => (
   <div className="container">
