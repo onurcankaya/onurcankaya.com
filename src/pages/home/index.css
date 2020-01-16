@@ -70,6 +70,12 @@
   padding-left: 50px;
 }
 
+@media (max-width: 1000px) {
+  .projects-title {
+    padding-left: 30px;
+  } 
+}
+
 .project {
   border: 1px solid #ddd;
   border-radius: 5px;
