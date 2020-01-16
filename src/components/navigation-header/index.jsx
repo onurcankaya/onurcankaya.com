@@ -1,18 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './index.css'
 
 const NavigationHeader = ({ content }) => (
   <header className="navigation-container">
     <div className="container navigation-content">
-      <Link to="/" className="logo">{`Onur.`}</Link>
+      <NavLink to="/" className="logo">{`Onur.`}</NavLink>
       <div className="navigation-labels">
         {content &&
           content.navigationLabels.map((item, index) => {
             return (
-              <Link key={index} to={item.route} className="navigation-label">
+              <NavLink
+                key={index}
+                exact={true}
+                activeClassName="is-active"
+                to={item.route}
+                className="navigation-label">
                 {item.label}
-              </Link>
+              </NavLink>
             )
           })}
         <a href="mailto:onur.eren.cankaya@gmail.com" className="contact-link">{`Contact`}</a>

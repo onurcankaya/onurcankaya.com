@@ -35,6 +35,10 @@
   color: rgb(51, 51, 51);
 }
 
+.is-active {
+  font-weight: bold;
+}
+
 @media (max-width: 320px) {
   .navigation-label {
     padding: 0 5px;
