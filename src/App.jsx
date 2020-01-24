@@ -7,6 +7,7 @@ import {
   fetchAboutPage,
   fetchExperienceSection,
   fetchSkillsSection,
+  fetchNowPage,
   fetchFooter,
 } from './services/api'
 import NavigationHeader from './components/navigation-header'
@@ -14,6 +15,7 @@ import Footer from './components/footer'
 import Loader from './components/loader'
 import Home from './pages/home'
 import About from './pages/about'
+import Now from './pages/now'
 import './index.css'
 
 class App extends React.PureComponent {
@@ -27,6 +29,7 @@ class App extends React.PureComponent {
       aboutPage: null,
       experience: null,
       skills: null,
+      nowPage: null,
       footer: null,
     }
   }
@@ -38,6 +41,7 @@ class App extends React.PureComponent {
     const aboutPage = await fetchAboutPage()
     const experience = await fetchExperienceSection()
     const skills = await fetchSkillsSection()
+    const nowPage = await fetchNowPage()
     const footer = await fetchFooter()
     this.setState({
       isLoading: false,
@@ -47,6 +51,7 @@ class App extends React.PureComponent {
       aboutPage,
       experience,
       skills,
+      nowPage,
       footer,
     })
   }
@@ -60,6 +65,7 @@ class App extends React.PureComponent {
       aboutPage,
       experience,
       skills,
+      nowPage,
       footer,
     } = this.state
 
@@ -84,6 +90,7 @@ class App extends React.PureComponent {
                 exact
                 render={(props) => <Home {...props} content={homePage} projects={projects} />}
               />
+              <Route path="/now" render={(props) => <Now {...props} content={nowPage} />} />
               <Redirect to="/" />
             </Switch>
             <Footer content={footer} />
