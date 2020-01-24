@@ -12,7 +12,7 @@ const fetchTypes = async (type) => {
   const api = await connectCMS()
   const response = await api.query(Prismic.Predicates.at('document.type', type), {})
   if (response) {
-    console.log(response.results)
+    // console.log(response.results)
     return mapResults(response.results)
   } else {
     return null
