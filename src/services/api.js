@@ -12,7 +12,7 @@ const fetchTypes = async (type) => {
   const api = await connectCMS()
   const response = await api.query(Prismic.Predicates.at('document.type', type), {})
   if (response) {
-    // console.log(response.results)
+    console.log(response.results)
     return mapResults(response.results)
   } else {
     return null
@@ -25,4 +25,5 @@ export const fetchProjectsSection = async () => fetchTypes('projects_section')
 export const fetchAboutPage = async () => fetchTypes('about_page')
 export const fetchExperienceSection = async () => fetchTypes('experience_section')
 export const fetchSkillsSection = async () => fetchTypes('skills_section')
+export const fetchNowPage = async () => fetchTypes('now_page')
 export const fetchFooter = async () => fetchTypes('footer')
