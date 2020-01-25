@@ -70,15 +70,13 @@ class App extends React.PureComponent {
       experience,
       skills,
       nowPage,
-      impossibleList,
+      // impossibleList,
       footer,
     } = this.state
 
     if (isLoading) {
       return <Loader />
     }
-
-    console.log('impossible list', impossibleList)
 
     return (
       <div>
