@@ -16,6 +16,8 @@ export const mapResults = (results) => {
       return mapSkillsSection(results[0].data)
     case 'now_page':
       return mapNowPage(results[0].data)
+    case 'impossible_list_page':
+      return mapImpossibleList(results[0].data)
     case 'footer':
       return mapFooter(results[0].data)
     default:
@@ -80,6 +82,11 @@ const mapSkillsSection = (content) => ({
 })
 
 const mapNowPage = (content) => ({
+  title: content ? RichText.asText(content.title) : '',
+  description: content ? RichText.render(content.description) : '',
+})
+
+const mapImpossibleList = (content) => ({
   title: content ? RichText.asText(content.title) : '',
   description: content ? RichText.render(content.description) : '',
 })

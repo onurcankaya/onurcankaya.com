@@ -8,6 +8,7 @@ import {
   fetchExperienceSection,
   fetchSkillsSection,
   fetchNowPage,
+  fetchImpossibleList,
   fetchFooter,
 } from './services/api'
 import NavigationHeader from './components/navigation-header'
@@ -30,6 +31,7 @@ class App extends React.PureComponent {
       experience: null,
       skills: null,
       nowPage: null,
+      impossibleList: null,
       footer: null,
     }
   }
@@ -42,6 +44,7 @@ class App extends React.PureComponent {
     const experience = await fetchExperienceSection()
     const skills = await fetchSkillsSection()
     const nowPage = await fetchNowPage()
+    const impossibleList = await fetchImpossibleList()
     const footer = await fetchFooter()
     this.setState({
       isLoading: false,
@@ -52,6 +55,7 @@ class App extends React.PureComponent {
       experience,
       skills,
       nowPage,
+      impossibleList,
       footer,
     })
   }
@@ -66,12 +70,15 @@ class App extends React.PureComponent {
       experience,
       skills,
       nowPage,
+      impossibleList,
       footer,
     } = this.state
 
     if (isLoading) {
       return <Loader />
     }
+
+    console.log('impossible list', impossibleList)
 
     return (
       <div>
