@@ -1,0 +1,28 @@
+.impossible-content {
+  width: 100%; 
+  padding: 180px 100px;
+}
+
+@media (max-width: 768px) {
+  .impossible-content {
+    padding: 120px 10px 0 10px;
+  }
+}
+
+.impossible-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.impossible-description p {
+  margin-bottom: 20px;
+}
+
+.impossible-description ul {
+  margin-bottom: 40px;
+}
+
+.impossible-description ul>li {
+  margin-bottom: 10px;
+}

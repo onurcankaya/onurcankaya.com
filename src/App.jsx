@@ -17,6 +17,7 @@ import Loader from './components/loader'
 import Home from './pages/home'
 import About from './pages/about'
 import Now from './pages/now'
+import ImpossibleList from './pages/impossible-list'
 import './index.css'
 
 class App extends React.PureComponent {
@@ -70,7 +71,7 @@ class App extends React.PureComponent {
       experience,
       skills,
       nowPage,
-      // impossibleList,
+      impossibleList,
       footer,
     } = this.state
 
@@ -96,6 +97,10 @@ class App extends React.PureComponent {
                 render={(props) => <Home {...props} content={homePage} projects={projects} />}
               />
               <Route path="/now" render={(props) => <Now {...props} content={nowPage} />} />
+              <Route
+                path="/impossible-list"
+                render={(props) => <ImpossibleList {...props} content={impossibleList} />}
+              />
               <Redirect to="/" />
             </Switch>
             <Footer content={footer} />
