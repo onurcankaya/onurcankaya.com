@@ -17,9 +17,9 @@
   font-size: 14px;
 }
 
-.icon {
+.social-icon {
   padding: 0 10px;
 }
-.icon:last-child {
+.social-icon:last-child {
   padding-right: 0;
 }

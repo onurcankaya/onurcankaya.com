@@ -28,6 +28,22 @@
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .navigation-labels {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+}
+
 .navigation-label {
   padding: 0 15px;
   font-size: 16px;

@@ -15,7 +15,7 @@ const Footer = ({ content }) => (
               key={index}
               target="_blank"
               rel="noopener noreferrer"
-              className="icon">
+              className="social-icon">
               <img src={item.logo} alt="social-icon" width={30} height={30} />
             </a>
           ))}

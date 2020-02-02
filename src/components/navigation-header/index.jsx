@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import MobileMenu from '../mobile-menu'
 import './index.css'
 
 const NavigationHeader = ({ content }) => (
@@ -21,6 +22,9 @@ const NavigationHeader = ({ content }) => (
             )
           })}
         <a href="mailto:onur.eren.cankaya@gmail.com" className="contact-link">{`Contact`}</a>
+      </div>
+      <div className="mobile-menu">
+        <MobileMenu navigationLabels={content.navigationLabels} />
       </div>
     </div>
   </header>
